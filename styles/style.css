@@ -67,7 +67,7 @@ ol {
 
 .search-form {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: end;
   column-gap: 40px;
 }
@@ -105,8 +105,9 @@ ol {
   line-height: normal;
 }
 
-.search-form__label-text:hover {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
+  text-underline-position: under;
 }
 
 .visually-hidden {
@@ -143,6 +144,7 @@ ol {
   display: flex;
   column-gap: 15px;
   align-items: center;
+  margin-bottom: 5px;
 }
 
 .search-form__pseudo-checkbox {
@@ -174,6 +176,7 @@ ol {
 }
 
 .button {
+  position: relative;
   border: 1px solid #fff;
   background-color: transparent;
   font-family: inherit;
@@ -183,7 +186,7 @@ ol {
   line-height: 21.6px;
   letter-spacing: 0;
   text-align: center;
-  padding: 6px 73.5px;
+  padding: 6px 0;
   cursor: pointer;
 }
 
@@ -193,6 +196,7 @@ ol {
 
 .button:hover {
   text-decoration: underline;
+  text-underline-position: under;
 }
 
 .button:focus {  /*Можно и .button:has(:focus-visible)*/
@@ -205,18 +209,14 @@ ol {
 }
 
 .search-form__submit-button {
-  position: relative;
-  width: 194px;
-  height: 34px;
+  width: 100%;
+  height: 100%;
   align-self: end;
-}
-
-.more-button-template {
-  position: relative;
 }
 
 .more-button {
   width: 100%;
+  margin-bottom: 2px;
 }
 
 .content__details {
@@ -243,18 +243,15 @@ ol {
 
 .content__list-container {
   position: relative;
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 298px;
   margin-top: 26px;
 }
 
 .content__list {
-  padding: 0 3px 0 3px;
+  padding: 0 3px;
 }
 
-.cards-list-item-template {
-  position: relative;
-}
 .content__list-item {
   margin-bottom: 30px;
 }
@@ -268,6 +265,8 @@ ol {
 
 .content__card-link:hover {
   text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 1px;
 }
 
 .content__card-link:focus {
@@ -294,11 +293,10 @@ ol {
 
 .content__video-card-description-container {
   flex-grow: 1;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .content__video-card-title {
+  max-width: 195px;
   font-family: 'Oswald', sans-serif;
   color: inherit;
   font-weight: 700;
@@ -307,6 +305,9 @@ ol {
   letter-spacing: 0;
   text-transform: uppercase;
   padding-bottom: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
@@ -316,6 +317,8 @@ ol {
   font-size: 18px;
   line-height: 16.2px;
   letter-spacing: 0;
+  white-space: nowrap;
+  overflow-wrap: break-word;
 }
 
 .content__video-card-thumbnail {
