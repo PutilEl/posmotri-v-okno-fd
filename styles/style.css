@@ -287,8 +287,8 @@ ol {
 }
 
 .content__video-card {
-  display: flex;
-  align-items: start;
+  display: grid;
+  grid-template-columns: 196px 194px;
 }
 
 .content__video-card-description-container {
@@ -296,7 +296,7 @@ ol {
 }
 
 .content__video-card-title {
-  max-width: 195px;
+  max-width: 100%;
   font-family: 'Oswald', sans-serif;
   color: inherit;
   font-weight: 700;
@@ -317,13 +317,12 @@ ol {
   font-size: 18px;
   line-height: 16.2px;
   letter-spacing: 0;
-  white-space: nowrap;
   overflow-wrap: break-word;
 }
 
 .content__video-card-thumbnail {
-  inline-size: 193px;
-  block-size: 103px;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   object-position: center;
 }
